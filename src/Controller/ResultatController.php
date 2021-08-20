@@ -37,7 +37,7 @@ class ResultatController extends AbstractController
             }
         }
         
-        dump($total_periode2);
+        // dump($total_periode2);
         return $this->render('resultat/index.html.twig', [
             'periode1' => $total_periode1,
             'periode2' => $total_periode2,
