@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des ventes{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 class="h2">Liste des vente (Test PHP leshabitues.fr)</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Utilisateur</th>
+                <th scope="col">Produit1</th>
+                <th scope="col">Produit2</th>
+                <th scope="col">Produit3</th>
+                <th scope="col">Produit4</th>
+                <th scope="col">Points</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vente in vente %}
+            <tr> 
+                <th scope="row">{{vente.utilisateur}}</th>
+                <td>{{vente.Produit1}}</td>
+                <td>{{vente.Produit2}}</td>
+                <td>{{vente.Produit3}}</td>
+                <td>{{vente.Produit4}}</td>
+                <td>{{vente.Points}}</td>
+                <td>{{ vente.date | date("d/m/Y") }}</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

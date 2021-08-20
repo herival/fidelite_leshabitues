@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Vente
+{% endblock %}
+
+{% block body %}
+<div class="container">
+	<h1 class="text-center">Enregistrer une vente</h1>
+
+    <div class="col-lg-8 mx-auto text-dark bg-trans rounded-lg">
+	{{ form_start(formVente) }}
+
+        <div class="form-row">
+            <div class="col-lg-3">
+                {{ form_row(formVente.utilisateur) }}
+            </div>
+            <div class="col-lg-3">
+                {{ form_row(formVente.Produit1) }}
+            </div>
+            <div class="col-lg-3">
+                {{ form_row(formVente.Produit2) }}
+            </div>
+            <div class="col-lg-3">
+                {{ form_row(formVente.Produit3) }}
+            </div>
+            <div class="col-lg-3">
+                {{ form_row(formVente.Produit4) }}
+            </div>
+            <div class="col-lg-3 mt-1">
+                <label class="col-lg-6">Date</label>
+                {{ form_widget(formVente.date, {'attr': {'class': 'text-center'}} ) }}
+            </div>
+        </div>
+
+        <div class="text-center mt-3 mb-4">
+            <input type="submit" class="btn btn-lg btn-success mb-2" value="Enregistrer">
+        </div>    
+    
+        {{ form_end(formVente) }}
+    </div>
+
+  
+</div>
+
+
+{% endblock %}

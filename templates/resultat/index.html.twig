@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Resultats{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 class="h2 text-center">Points de l'utilisateur {{user}}</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Periode</th>
+                <th scope="col">Points</th>
+                <th scope="col">Euros</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> 
+                <th scope="row">Periode 1 </th>
+                <td>{{periode1}}</td>
+                <td>{{periode1 * 0.001}}€</td>
+            </tr>
+            <tr> 
+                <th scope="row">Periode 2 </th>
+                <td>{{periode2}}</td>
+                <td>{{periode2 * 0.001}}€</td>
+            </tr>
+            <tr> 
+                <th scope="row">Periode 3 </th>
+                <td>{{periode3}}</td>
+                <td>{{periode3 * 0.001}}€</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="text-center h3">Liste des utilisateurs</h3>
+    {% for utilisateur in liste_utilisateur %}
+        <p><a href="{{ path('resultat', {"user":utilisateur.utilisateur}) }}">{{utilisateur.utilisateur}}</a></p>
+    {% endfor %}
+
+</div>
+{% endblock %}
