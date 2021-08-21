@@ -1,4 +1,4 @@
-#Fidelite - leshabitues.fr
+# Fidelite - leshabitues.fr
 Calcul des points de fidelités 
 
 ## Specs :
