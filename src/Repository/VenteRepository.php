@@ -26,7 +26,9 @@ class VenteRepository extends ServiceEntityRepository
     public function findByUser()
     {
         return $this->createQueryBuilder('v')
-            ->GroupBy('v.utilisateur', 'v.id')
+            ->select('v.utilisateur')
+            // ->GroupBy('v.id')
+            ->addGroupBy('v.utilisateur')
             ->getQuery()
             ->getResult()
         ;

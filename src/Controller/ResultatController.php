@@ -14,6 +14,7 @@ class ResultatController extends AbstractController
     public function index(VenteRepository $venteRepository, $user): Response
     {
         $utilisateur = $venteRepository->findByUser();
+        // dd($utilisateur);
 
         $resultat = $venteRepository->findByUtilisateur($user);
 
