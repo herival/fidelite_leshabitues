@@ -3,6 +3,7 @@ Calcul des points de fidelités
 
 Specs :
  - symfony => 5.4
+ 
 Requirements:
 - php v^7.4
 - php-ext-pgsql
@@ -15,7 +16,7 @@ Installation :
 - docker-compose up -d
 
 Database:
-- bin/console d:m:m
+- bin/console doctrine:migration:migrate
 
 Application disponible sur Heroku : 
 https://fidelite-leshabitues-fr10.herokuapp.com/
