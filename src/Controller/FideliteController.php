@@ -45,7 +45,8 @@ class FideliteController extends AbstractController
             $points_p1 = ($p1 * 5);
             
             // calcul points produit 2
-            if($p2>1){$points_p2 = ($p2 * 5);}
+            // Effectivement j'ai homis le signe égal ce qui à fausser le calcul
+            if($p2>=1){$points_p2 = ($p2 * 5);}
             else {$points_p2 = 0;}
             
             // calcul points produit 3
