@@ -45,7 +45,8 @@ class FideliteController extends AbstractController
             $points_p1 = ($p1 * 5);
             
             // calcul points produit 2
-            if($p2>1){$points_p2 = ($p2 * 5);}
+            // Effectivement je n'ai pas fait attention à l'énoncé "si au moins 1 "PRODUIT 1" est vendu
+            if($p1>=1){$points_p2 = ($p2 * 5);}
             else {$points_p2 = 0;}
             
             // calcul points produit 3
@@ -55,9 +56,12 @@ class FideliteController extends AbstractController
             // calcul points produit 4 
             $points_p4 = ($p4 * 35);
             
-            
-            $nouvelle_vente->setPoints($points_p1+$points_p1+$points_p3+$points_p4);
+            // $total = $points_p1+$points_p2+$points_p3+$points_p4;
+            $nouvelle_vente->setPoints($points_p1+$points_p2+$points_p3+$points_p4);
             // dd($points_p4);
+            // dd($points_p1, $points_p2, $points_p3, $points_p4, $total);
+
+
 
             $em->persist($nouvelle_vente);
             $em->flush();
