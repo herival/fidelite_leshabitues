@@ -24,16 +24,18 @@ class ResultatController extends AbstractController
 
         $periode1 = new DateTime("2021-04-30");
         $periode2 = new DateTime("2021-08-31");
-        $periode3 = new DateTime("2021-12-31");
+        $periode3 = new DateTime("2021-10-01");
+        $finperiode = new DateTime("2021-12-31");
 
         // triage des points de fidélité par date.
         foreach ($resultat as $key => $value){
 
-            if($resultat[$key]->getDate() < ($periode1)){
+            if($resultat[$key]->getDate() <= ($periode1)){
                 $total_periode1 = $total_periode1 + $resultat[$key]->getPoints();
-            } elseif ($resultat[$key]->getDate() < ($periode2)){
+            } elseif ($resultat[$key]->getDate() <= ($periode2)){
                 $total_periode2 = $total_periode2 + $resultat[$key]->getPoints();
-            } else {
+                // Encore une erreur d'inattention sur l'énoncé :-) 
+            } elseif ($resultat[$key]->getDate() >= ($periode3) && $resultat[$key]->getDate() <= ($finperiode)){
                 $total_periode3 = $total_periode3 + $resultat[$key]->getPoints();
             }
         }
