@@ -2,7 +2,7 @@
 Calcul des points de fidelités 
 
 ## Specs :
- - symfony => 5.4
+ - symfony => 5.3
  
 ## Requirements:
 - php v^7.4
